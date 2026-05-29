@@ -14,7 +14,7 @@ const {
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("about")
-        .setDescription("Learn more about Musicify"),
+        .setDescription("Tìm hiểu thêm về tôi"),
 
     async execute(interaction, client) {
         const container = new ContainerBuilder();
@@ -25,7 +25,7 @@ module.exports = {
             new SectionBuilder()
                 .addTextDisplayComponents(
                     new TextDisplayBuilder().setContent(
-                        "# <:Musicify_Logo:1504329028356673536> About Musicify"
+                        "# <:Musicify_Logo:1504329028356673536> Tìm hiểu"
                     )
                 )
                 .setThumbnailAccessory(
@@ -37,23 +37,15 @@ module.exports = {
 
         container.addTextDisplayComponents(
             new TextDisplayBuilder().setContent(
-                "**What is Musicify?**\n" +
-                "-# A ChatPlay-focused Discord music bot that delivers high-quality\n" +
-                "-# music streaming directly to your voice channels.\n\n" +
-                "**Powered By**\n" +
-                "-# [discord.js](https://discord.js.org/) · [Riffy](https://riffy.js.org/) · [Musicard](https://www.npmjs.com/package/musicard)\n\n" +
-                "**Features**\n" +
-                "-# • **Rich now-playing cards** with progress bars\n" +
-                "-# • **10+ audio filter** presets\n" +
-                "-# • **Smart queue management** with pagination\n" +
-                "-# • **ChatPlay** — instant song requests\n" +
-                "-# • **Interactive button-based** controls"
+                "**Tôi là ai ?**\n" +
+                "-# Tôi là 1 bot được tạo ra để treo máy giữ chuỗi và chơi nhạc\n" 
+                
             )
         );
 
         container.addTextDisplayComponents(
             new TextDisplayBuilder().setContent(
-                "-# Musicify is [open source](https://github.com/codebymitch/Musicify). Built by a passionate team of developers."
+                "-# Tôi được làm bởi nikki bạn có thể tìm thấy tôi ở git anh ấy."
             )
         );
 
@@ -62,11 +54,11 @@ module.exports = {
         const row = new ActionRowBuilder().addComponents(
             new ButtonBuilder()
                 .setLabel("Support Server")
-                .setURL("https://discord.gg/MRjEUhDCpZ")
+                .setURL("####")
                 .setStyle(ButtonStyle.Link),
             new ButtonBuilder()
                 .setLabel("⭐ Vote")
-                .setURL("https://top.gg/bot/1502977716196999309/vote")
+                .setURL("####")
                 .setStyle(ButtonStyle.Link)
         );
 
