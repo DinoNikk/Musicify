@@ -5,12 +5,12 @@ const { setGuildSetting, getGuildSettings } = require("../utils/database");
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("247")
-        .setDescription("Toggle 24/7 mode — bot stays in VC even when queue is empty"),
+        .setDescription("Đây là tính năng tui tạo ra để treo ạ =~="),
 
     async execute(interaction, client) {
         if (!interaction.member.voice?.channel) {
             return interaction.reply({
-                content: "❌ You need to be in a voice channel!",
+                content: "❌ Vô kênh thoại đi chứ rôi mới dùng lệnh mom ơi!",
                 flags: MessageFlags.Ephemeral,
             });
         }
@@ -44,8 +44,8 @@ module.exports = {
         const emoji = newState ? "✅" : "⏹";
         const label = newState ? "Enabled" : "Disabled";
         const desc = newState
-            ? "Active — I'll stay in the voice channel."
-            : "Inactive — I'll leave when the queue is empty.";
+            ? "Active — Tui sẽ ở đây."
+            : "Inactive — Lưu trữ tại đây .";
 
         const container = new ContainerBuilder();
         container.addTextDisplayComponents(
