@@ -1,13 +1,13 @@
 module.exports = {
     nodes: [
-        {
-           host: "lavalink-2026-production-cca6.up.railway.app",
-            password: "youshallnotpass",
-            port: 2333,
-            secure: false,
-           name: "Lavalink-Cua-Toi"
-        }
-    ],
+    {
+      name: "Lavalink-Cua-Toi",
+      host: "lavalink-2026.production.up.railway.internal", // <--- Sử dụng chính xác đường dẫn có đuôi .internal này
+      port: 2333, 
+      password: "youshallnotpass", 
+      secure: false // BẮT BUỘC ĐỂ FALSE vì là mạng nội bộ
+    }
+  ],
 
     defaultSearchPlatform: "ytmsearch",
     restVersion: "v4",
