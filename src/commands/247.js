@@ -26,12 +26,18 @@ module.exports = {
         if (newState) {
             let player = client.riffy.players.get(guildId);
             if (!player) {
+                // Đảm bảo truyền đúng các tham số này
                 player = client.riffy.createConnection({
                     guildId: guildId,
                     voiceChannel: interaction.member.voice.channel.id,
                     textChannel: interaction.channel.id,
                     deaf: true,
                 });
+            }
+            
+            // THÊM DÒNG NÀY: Nếu player chưa kết nối, bắt nó kết nối
+            if (player) {
+                player.connect();
             }
         }
 
