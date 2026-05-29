@@ -1,7 +1,7 @@
 module.exports = {
     nodes: [
         {
-            host: "localhost",
+           host: "lavalink-2026-production-cca6.up.railway.app",
             password: "youshallnotpass",
             port: 443,
             secure: false,
