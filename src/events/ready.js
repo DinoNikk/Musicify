@@ -16,12 +16,12 @@ module.exports = {
 
         // Cycling statuses
         const statuses = [
-            "Pretending to be a DJ",
-            "/help for commands",
-            "Spinning tracks for servers",
-            "ChatPlay mode activated",
-            "Bass boosting servers",
-            "Now playing: your favorite songs",
+            "Chán quá điiiii :<<",
+            "Tôi bị ép treo máy",
+            "Nhìn cái gì?? var nhau k mom",
+            "Đang lắc đuýt ở Biện Kinh",
+            "Ai sợ thì đi về!!!",
+            "ọc ọc ọc ọc ọc",
         ];
 
         // Set initial activity
