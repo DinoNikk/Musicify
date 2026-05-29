@@ -8,6 +8,7 @@ module.exports = {
         .setDescription("Toggle 24/7 mode — bot stays in VC even when queue is empty"),
 
     async execute(interaction, client) {
+        // 1. Kiểm tra xem người dùng có ở trong kênh voice không
         if (!interaction.member.voice?.channel) {
             return interaction.reply({
                 content: "❌ You need to be in a voice channel!",
@@ -19,22 +20,23 @@ module.exports = {
         const guildData = getGuildData(guildId);
         const dbSettings = getGuildSettings(guildId);
 
+        // 2. Đảo trạng thái cài đặt 24/7 trong database
         const newState = !dbSettings.twentyFourSeven;
         guildData.twentyFourSeven = newState;
         setGuildSetting(guildId, "twentyFourSeven", newState);
 
-        if (newState) {
-            let player = client.riffy.players.get(guildId);
-            if (!player) {
-                player = client.riffy.createConnection({
-                    guildId: guildId,
-                    voiceChannel: interaction.member.voice.channel.id,
-                    textChannel: interaction.channel.id,
-                    deaf: true,
-                });
-            }
+        // 3. ĐƯA RA NGOÀI IF: Luôn kết nối bot vào kênh voice ngay khi gõ lệnh
+        let player = client.riffy.players.get(guildId);
+        if (!player) {
+            player = client.riffy.createConnection({
+                guildId: guildId,
+                voiceChannel: interaction.member.voice.channel.id,
+                textChannel: interaction.channel.id,
+                deaf: true,
+            });
         }
 
+        // 4. Thiết lập nội dung hiển thị giao diện kết quả
         const emoji = newState ? "✅" : "⏹";
         const label = newState ? "Enabled" : "Disabled";
         const desc = newState
@@ -51,6 +53,8 @@ module.exports = {
                 "-# This setting is saved across bot restarts."
             )
         );
+
+        // 5. Trả lời tương tác trên Discord
         await interaction.reply({
             components: [container],
             flags: MessageFlags.Ephemeral | MessageFlags.IsComponentsV2,
