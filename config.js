@@ -3,9 +3,9 @@ module.exports = {
         {
            host: "lavalink-2026-production-cca6.up.railway.app",
             password: "youshallnotpass",
-            port: 443,
+            port: 2333,
             secure: false,
-            name: "Main"
+           name: "Lavalink-Cua-Toi"
         }
     ],
 
